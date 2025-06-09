@@ -42,7 +42,7 @@ class binary_symmetric_channel:
 		
 		:return: String describing the binary_symmetric_channel with its error probability.
 		"""
-		return f"binary_symmetric_channel(p={self.p})"
+		return f"Binary Symmetric Channel with p={self.p}."
 
 class q_ary_symmetric_channel:
 	def __init__(self, p, q):
@@ -94,16 +94,19 @@ class q_ary_symmetric_channel:
 		return np.log2(self.q) * (1 - self.p)
 
 	def __str__(self):
-		return f"q-ary Symmetric Channel(p={self.p}, q={self.q})"
+		return f"q-ary Symmetric Channel with p={self.p}, q={self.q}."
 	
 class channel:
-	def __init__(self, p, q=None):
+	def __init__(self, p, q=None, random_state=None):
 		"""
 		Initialize a channel, either binary or q-ary symmetric channel.
 		
 		:param p: Error probability (0 <= p <= 1)
 		:param q: Alphabet size (only for q-ary channel, must be > 1)
+		:param random_state: Optional random state for reproducibility.
 		"""
+		if random_state is not None:
+			np.random.seed(random_state)
 		if q is None:
 			self.channel = binary_symmetric_channel(p)
 		else:

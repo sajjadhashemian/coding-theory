@@ -4,9 +4,7 @@ from channel import channel
 
 
 if __name__=='__main__':
-	# Example usage of the channel class
 	p = 0.1  # Error probability
-	q = 4    # Alphabet size for q-ary channel
 
 	# Create a binary symmetric channel
 	binary_channel = channel(p)
@@ -17,7 +15,10 @@ if __name__=='__main__':
 	print("Input binary sequence:", binary_sequence)
 	print("Output binary sequence:", output_binary)
 	print("Binary channel capacity:", binary_channel.capacity())
-	
+
+
+	p = 0.4  # Error probability
+	q = 4    # Alphabet size for q-ary channel
 	# Create a q-ary symmetric channel
 	q_ary_channel = channel(p, q)
 	print(q_ary_channel)
