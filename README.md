@@ -4,4 +4,5 @@ Python library implementing some algorithms from the ['Essential Coding Theory']
 
 Included:
 
-* Symmetric Channel
+* Symmetric channel
+* Galois Fields and vector spaces on fields
